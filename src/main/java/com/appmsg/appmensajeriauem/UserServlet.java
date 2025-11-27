@@ -4,16 +4,18 @@ import com.appmsg.appmensajeriauem.model.User;
 import com.appmsg.appmensajeriauem.repository.UserRepository;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import org.mindrot.jbcrypt.BCrypt;
 
-import java.io.*;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 import static com.appmsg.appmensajeriauem.utils.PassUtils.hashPassword;
 
-@WebServlet("/user")
+@WebServlet(name = "userServlet", value = "/api/user")
 public class UserServlet extends HttpServlet {
 
     private UserRepository repo;
