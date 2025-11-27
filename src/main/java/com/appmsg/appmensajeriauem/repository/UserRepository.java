@@ -11,7 +11,7 @@ public class UserRepository {
     private final MongoCollection<Document> collection;
 
     public UserRepository(MongoDbClient mongoClient) {
-        this.collection = mongoClient.getCollection("users");
+        this.collection = mongoClient.getCollection("User");
     }
 
     public void createUser(User user) {
